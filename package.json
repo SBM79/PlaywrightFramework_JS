@@ -1,0 +1,24 @@
+{
+  "name": "playwright-js-framework",
+  "version": "1.0.0",
+  "description": "Playwright JS framework converted from Java + TestNG",
+  "scripts": {
+    "test":           "playwright test",
+    "test-login":     "playwright test --project=login-chromium --project=login-firefox",
+    "test-buy":       "playwright test --project=buy-chromium --project=buy-firefox",
+    "test-ddt":       "playwright test --project=ddt-chromium --project=ddt-firefox",
+    "test-chromium":  "playwright test --project=login-chromium --project=buy-chromium --project=ddt-chromium",
+    "test-firefox":   "playwright test --project=login-firefox --project=buy-firefox --project=ddt-firefox",
+    "test-headed":    "playwright test --headed",
+    "test-debug":     "playwright test --debug",
+    "test-ui":        "playwright test --ui",
+    "report":         "playwright show-report test-output/html-report",
+    "clean":          "npx rimraf test-output test-results screenshots traces"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
