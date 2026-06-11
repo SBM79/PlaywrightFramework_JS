@@ -47,9 +47,9 @@ BaseTest('T-E2E-001: Full end-to-end purchase of Sauce Labs Backpack', async ({ 
 
     // STEP 4 - Verify cart badge = 1
     const cartCount = await inventoryPage.getCartCount();
-    expect(cartCount).toBe(1,
+    expect(cartCount,
         `STEP 4 FAIL - Expected cart badge = 1, found: ${cartCount}`
-    );
+    ).toBe(1);
 
     // STEP 5 - Open cart
     await inventoryPage.openCart();
@@ -111,14 +111,14 @@ BaseTest('TC-NEG-001: Checkout with empty cart produces no order items', async (
 
     // STEP 3 - Verify cart is empty
     const cartItemCount = await inventoryPage.getCartCount();
-    expect(cartItemCount).toBe(0,
+    expect(cartItemCount,
         `STEP 3 FAIL - Cart should have 0 items. Found: ${cartItemCount}`
-    );
+    ).toBe(0);
 
     const badgeCount = await inventoryPage.getCartCount();
-    expect(badgeCount).toBe(0,
+    expect(badgeCount,
         `STEP 3 FAIL - Cart badge should show 0. Found: ${badgeCount}`
-    );
+    ).toBe(0);
 
     // STEP 4 - Proceed to checkout from empty cart
     await cartPage.proceedToCheckout();
@@ -134,9 +134,9 @@ BaseTest('TC-NEG-001: Checkout with empty cart produces no order items', async (
 
     // STEP 6 - Verify zero items in overview
     const overviewCount = await inventoryPage.getCartCount();
-    expect(overviewCount).toBe(0,
+    expect(overviewCount,
         `STEP 6 FAIL - Overview should have 0 items. Found: ${overviewCount}`
-    );
+    ).toBe(0);
 
     // STEP 7 - Verify no order confirmation reached
     expect(page.url().includes('checkout-complete'),

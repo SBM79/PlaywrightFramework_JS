@@ -1,8 +1,6 @@
 'use strict';
 
-// Mirrors: base/BaseTest.java
-// Java ThreadLocal<Playwright/Browser/Context/Page> -> Playwright Test built-in fixtures
-// @BeforeMethod / @AfterMethod -> test.beforeEach / fixture teardown
+
 
 const { test: base, expect } = require('@playwright/test');
 const path     = require('path');
@@ -11,7 +9,6 @@ const QAConfig = require('../config/QAConfig');
 
 const BaseTest = base.extend({
 
-    // Mirrors: setUp @BeforeMethod — creates context with baseURL, viewport, tracing
     context: async ({ browser }, use, testInfo) => {
 
         // Mirrors: Files.createDirectories(...)

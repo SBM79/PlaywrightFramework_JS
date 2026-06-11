@@ -40,7 +40,6 @@ jobs:
       # STEP 6 - Run Playwright tests (mirrors: Maven Surefire)
       - name: Run Playwright tests
         run: npx playwright test
-        continue-on-error: true
 
       # STEP 7 - Upload HTML report (mirrors: Upload TestNG HTML report)
       - name: Upload HTML test report
