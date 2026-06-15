@@ -33,6 +33,8 @@ function loginData() {
     for (const line of lines) {
         lineNumber++;
 
+        if (line.trim() === '') continue;   // skip blank lines
+
         if (isHeader) {
             isHeader = false;               // skip header row
             console.log(`[loginData] Header  (line ${lineNumber}) skipped : ${line}`);
