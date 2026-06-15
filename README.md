@@ -42,7 +42,7 @@ All environment configuration lives in [src/config/QAConfig.js](src/config/QACon
 
 ### Changing the base URL
 
-To point the framework at a different environment, update `BASE_URL` in `src/config/QAConfig.js`:
+To point the framework at a different environment (staging env/ prod ), update `BASE_URL` in `src/config/QAConfig.js`:
 
 ```js
 const QAConfig = {
@@ -53,26 +53,7 @@ const QAConfig = {
 
 Update `VALID_USERNAME` / `VALID_PASSWORD` (and the invalid equivalents) as needed if the new environment requires different credentials.
 
-## Running Tests
-
-```bash
-npm test                  # all tests, all browsers, parallel
-
-npm run test-login        #   (chromium + firefox)
-npm run test-buy          # buy product tests (chromium + firefox)
-npm run test-ddt          # data-driven tests (chromium + firefox)
-
-npm run test-chromium     # all tests on chromium only
-npm run test-firefox      # all tests on firefox only
-
-npm run test-headed       # run with visible browser window
-npm run test-debug        # run with Playwright inspector
-npm run test-ui           # open Playwright visual UI runner
-npm run report            # open HTML report after run
-npm run clean             # remove test-output, test-results, screenshots, traces
-```
-
-### Or run directly with npx (no npm scripts needed)
+ run directly with npx (no npm scripts needed)
 
 ```bash
 npx playwright test
